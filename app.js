@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 const { getGenres } = require("./fakeGenreService");
 const { getMovies, getMovie } = require("./fakeMovieService");
+app.use(express.static("public"))
 app.get("/movies/", function (req, res) {
   res.status(201).json({
     movies: getMovies()
