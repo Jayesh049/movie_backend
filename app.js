@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 const { getGenres } = require("./fakeGenreService");
 const { getMovies, getMovie } = require("./fakeMovieService");
 app.use(express.static("public"))
@@ -23,6 +24,6 @@ app.get("/genres", function (req, res) {
     });
   }, 2000);
 });
-app.listen(process.env.PORT||4000, function () {
+app.listen(process.env.PORT || 4000, function () {
   console.log("Server Listening at port 4000");
 });
