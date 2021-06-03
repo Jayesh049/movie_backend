@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(cors())
 const { getGenres } = require("./fakeGenreService");
 const { getMovies, getMovie } = require("./fakeMovieService");
 app.use(express.static("public"))
